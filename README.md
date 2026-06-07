@@ -13,7 +13,6 @@ Fitur utama yang tersedia:
 - 📚 Manajemen data buku dan kategori buku
 - 👥 Manajemen data anggota perpustakaan
 - 📋 Transaksi peminjaman dan pengembalian buku (dengan pengecekan stok otomatis)
-- 📊 Dashboard statistik sistem perpustakaan
 - 📝 Log aktivitas otomatis setiap request tercatat ke database
 
 ---
