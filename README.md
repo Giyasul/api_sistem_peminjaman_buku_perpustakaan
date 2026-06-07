@@ -1,58 +1,227 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 API Sistem Peminjaman Buku Perpustakaan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> RESTful API untuk pengelolaan sistem perpustakaan digital — mencakup manajemen buku, kategori, anggota, dan transaksi peminjaman buku.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📖 Deskripsi Singkat
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**API Sistem Peminjaman Buku Perpustakaan** adalah layanan Web Service berbasis RESTful API yang dibangun menggunakan **Laravel** dan **JWT Authentication**. Sistem ini dirancang untuk memudahkan pengelolaan data perpustakaan secara digital dan terintegrasi.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Fitur utama yang tersedia:
+- 🔐 Autentikasi pengguna menggunakan JWT (register, login, logout)
+- 📚 Manajemen data buku dan kategori buku
+- 👥 Manajemen data anggota perpustakaan
+- 📋 Transaksi peminjaman dan pengembalian buku (dengan pengecekan stok otomatis)
+- 📊 Dashboard statistik sistem perpustakaan
+- 📝 Log aktivitas otomatis setiap request tercatat ke database
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ⚙️ Cara Menjalankan Sistem
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Persyaratan
+- PHP >= 8.2
+- Composer
+- MySQL
+- Laravel Herd / XAMPP / Laragon
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Langkah-langkah
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+**1. Clone repositori**
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/username/api_sistem_peminjaman_buku_perpustakaan.git
+cd api_sistem_peminjaman_buku_perpustakaan
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+**2. Install dependency**
+```bash
+composer install
+```
 
-## Contributing
+**3. Salin file konfigurasi**
+```bash
+cp .env.example .env
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**4. Generate application key**
+```bash
+php artisan key:generate
+```
 
-## Code of Conduct
+**5. Konfigurasi file `.env`**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Buka file `.env` dan sesuaikan bagian berikut:
+```env
+APP_NAME=LibraryAPI
+APP_URL=http://localhost:8000
 
-## Security Vulnerabilities
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sistem_peminjaman_buku_perpustakaan
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**6. Generate JWT Secret**
+```bash
+php artisan jwt:secret
+```
 
-## License
+**7. Jalankan migrasi dan seeder**
+```bash
+php artisan migrate --seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**8. Jalankan server**
+```bash
+php artisan serve
+```
+
+API dapat diakses di: `http://localhost:8000/api`
+
+---
+
+## 👤 Informasi Akun Uji Coba
+
+Setelah menjalankan seeder, akun berikut sudah tersedia dan siap digunakan:
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@library.com | password123 |
+| Petugas | petugas1@library.com | password123 |
+
+> **Cara login:** Kirim request `POST /api/login` dengan email dan password di atas, lalu gunakan token yang didapat sebagai `Bearer Token` di header Authorization untuk mengakses endpoint lainnya.
+
+---
+
+## 📡 Daftar Endpoint
+
+### 🔐 Auth
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| POST | /api/register | Registrasi user baru |
+| POST | /api/login | Login dan dapatkan token JWT |
+| POST | /api/logout | Logout dan invalidasi token |
+| GET | /api/me | Ambil data user yang sedang login |
+
+### 👤 Users
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | /api/user | Daftar semua user |
+| GET | /api/user/{id} | Detail user |
+| PUT | /api/user/{id} | Update data user |
+| DELETE | /api/user/{id} | Hapus user |
+
+### 📂 Categories
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | /api/categories | Daftar semua kategori |
+| POST | /api/categories | Tambah kategori baru |
+| GET | /api/categories/{id} | Detail kategori |
+| PUT | /api/categories/{id} | Update kategori |
+| DELETE | /api/categories/{id} | Hapus kategori |
+| GET | /api/categories/{id}/books | Daftar buku berdasarkan kategori |
+
+### 📚 Books
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | /api/books | Daftar semua buku |
+| POST | /api/books | Tambah buku baru |
+| GET | /api/books/{id} | Detail buku |
+| PUT | /api/books/{id} | Update data buku |
+| DELETE | /api/books/{id} | Hapus buku |
+| GET | /api/books/dipinjam | Daftar buku yang sedang dipinjam |
+
+### 👥 Members
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | /api/member | Daftar semua anggota |
+| POST | /api/member | Tambah anggota baru |
+| GET | /api/member/{id} | Detail anggota |
+| PUT | /api/member/{id} | Update data anggota |
+| DELETE | /api/member/{id} | Hapus anggota |
+| GET | /api/members/{id}/pinjaman | Riwayat pinjaman per anggota |
+
+### 📋 Pinjaman
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | /api/loan | Daftar semua pinjaman |
+| POST | /api/loan | Buat transaksi pinjaman baru |
+| GET | /api/loan/{id} | Detail pinjaman |
+| PUT | /api/loan/{id} | Update status pinjaman / kembalikan buku |
+| DELETE | /api/loan/{id} | Hapus data pinjaman |
+| GET | /api/pinjaman/aktif | Daftar pinjaman yang belum dikembalikan |
+| GET | /api/pinjaman/overdue | Daftar pinjaman yang melewati batas waktu |
+
+### 📊 Dashboard & Log
+| Method | Endpoint | Keterangan |
+|--------|----------|------------|
+| GET | /api/dashboard | Statistik keseluruhan sistem |
+| GET | /api/log | Riwayat log aktivitas sistem |
+
+---
+
+## 📄 Dokumentasi API
+
+Dokumentasi lengkap tersedia dalam bentuk **Postman Collection** yang dapat diimport langsung ke Postman.
+
+📁 File: `docs/API_Sistem_Peminjaman_Buku_Perpustakaan.postman_collection.json`
+
+### Cara import ke Postman:
+1. Buka aplikasi Postman
+2. Klik tombol **Import** di pojok kiri atas
+3. Pilih file `docs/API_Sistem_Peminjaman_Buku_Perpustakaan.postman_collection.json`
+4. Klik **Import**
+5. Setup environment variable `base_url` = `http://localhost:8000/api`
+6. Login terlebih dahulu, token akan tersimpan otomatis
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+| Teknologi | Keterangan |
+|-----------|------------|
+| Laravel 11 | Framework PHP untuk membangun RESTful API |
+| MySQL | Database untuk menyimpan data sistem |
+| JWT Auth | Autentikasi berbasis JSON Web Token (tymon/jwt-auth) |
+| Postman | Tools untuk testing dan dokumentasi API |
+| GitHub | Version control dan pengumpulan proyek |
+
+---
+
+## 👨‍💻 Tim Pengembang
+
+| Nama | NIM | Tugas |
+|------|-----|-------|
+| Giyasul (Ketua) | - | Arsitektur sistem, endpoint Auth, Books, Categories, JWT middleware |
+| Idir | 2301040011 | Endpoint Members, Loans, Log Aktivitas, validasi & error handling |
+| Tio | 2301040022 | Dokumentasi Postman Collection, README, setup GitHub, testing |
+
+---
+
+## 📁 Struktur Repositori
+
+```
+api_sistem_peminjaman_buku_perpustakaan/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   └── Middleware/
+│   └── Models/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── routes/
+│   └── api.php
+├── docs/
+│   └── API_Sistem_Peminjaman_Buku_Perpustakaan.postman_collection.json
+├── .env.example
+├── README.md
+└── composer.json
+```
+
+---
+
+*Proyek UAS Mata Kuliah Pemrograman Web Service — Genap 2025/2026 | Universitas Bumigora*
