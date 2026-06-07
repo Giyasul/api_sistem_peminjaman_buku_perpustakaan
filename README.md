@@ -183,4 +183,4 @@ Dokumentasi mencakup detail endpoint, method, parameter, contoh request, dan con
 
 ---
 
-*Proyek UAS Mata Kuliah Pemrograman Web Service — Genap 2025/2026 | Universitas Bumigora*
+*Proyek UAS Mata Kuliah Pemrograman Web Service Genap 2025/2026 | Universitas Bumigora*
