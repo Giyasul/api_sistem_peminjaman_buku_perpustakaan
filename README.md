@@ -75,6 +75,8 @@ php artisan migrate --seed
 php artisan serve
 ```
 
+---
+
 ## 👤 Informasi Akun Uji Coba
 
 Setelah menjalankan seeder, akun berikut sudah tersedia dan siap digunakan:
