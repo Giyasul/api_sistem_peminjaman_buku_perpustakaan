@@ -3,9 +3,9 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\MemberController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
@@ -19,15 +19,14 @@ Route::middleware(['auth:api', 'log.activity'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
     // User
-    Route::apiResource('users', UserController::class)->except(['store']);
+    Route::apiResource('user', UserController::class)->except(['store']);
     // kategori buku
     Route::apiResource('categories', KategoriController::class);
     // buku
-    Route::apiResource('books', BookController::class);
+    Route::apiResource('book', BookController::class);
     // member
-    Route::apiResource('members', MemberController::class);
+    Route::apiResource('member', MemberController::class);
     // loan
     Route::apiResource('loan', LoanController::class);
 
 });
-
