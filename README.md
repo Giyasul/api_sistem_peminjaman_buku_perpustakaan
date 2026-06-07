@@ -189,9 +189,9 @@ Dokumentasi mencakup detail endpoint, method, parameter, contoh request, dan con
 
 | Nama | NIM | Tugas |
 |------|-----|-------|
-| Giyasul (Ketua) | - | Arsitektur sistem, endpoint Auth, Books, Categories, JWT middleware |
-| Idir | 2301040011 | Endpoint Members, Loans, Log Aktivitas, validasi & error handling |
-| Tio | 2301040022 | Dokumentasi Postman Collection, README, setup GitHub, testing |
+| Giyasul Firdaus Fasni | 2301040037 | Arsitektur sistem, endpoint Auth, Books, Categories, JWT middleware |
+| Haidir Ali | 2301040011 | Endpoint Members, Loans |
+| Tio Alvandi Ahmad Prasetya | 2301040026 | Endpoint Kategori Buku, Buku |
 
 ---
 
