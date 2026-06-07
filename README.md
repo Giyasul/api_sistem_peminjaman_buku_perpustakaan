@@ -75,10 +75,6 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-API dapat diakses di: `http://localhost:8000/api`
-
----
-
 ## 👤 Informasi Akun Uji Coba
 
 Setelah menjalankan seeder, akun berikut sudah tersedia dan siap digunakan:
