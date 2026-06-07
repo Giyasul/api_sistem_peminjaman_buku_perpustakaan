@@ -154,12 +154,6 @@ Setelah menjalankan seeder, akun berikut sudah tersedia dan siap digunakan:
 | GET | /api/pinjaman/aktif | Daftar pinjaman yang belum dikembalikan |
 | GET | /api/pinjaman/overdue | Daftar pinjaman yang melewati batas waktu |
 
-### 📊 Dashboard & Log
-| Method | Endpoint | Keterangan |
-|--------|----------|------------|
-| GET | /api/dashboard | Statistik keseluruhan sistem |
-| GET | /api/log | Riwayat log aktivitas sistem |
-
 ---
 
 ## 📄 Dokumentasi API
