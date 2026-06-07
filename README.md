@@ -165,17 +165,11 @@ Setelah menjalankan seeder, akun berikut sudah tersedia dan siap digunakan:
 
 ## 📄 Dokumentasi API
 
-Dokumentasi lengkap tersedia dalam bentuk **Postman Collection** yang dapat diimport langsung ke Postman.
+Dokumentasi lengkap endpoint tersedia secara online melalui tautan berikut:
 
-📁 File: `docs/API_Sistem_Peminjaman_Buku_Perpustakaan.postman_collection.json`
+🔗 **[Lihat Dokumentasi API](https://documenter.getpostman.com/view/43068266/2sBXwqrAPD)**
 
-### Cara import ke Postman:
-1. Buka aplikasi Postman
-2. Klik tombol **Import** di pojok kiri atas
-3. Pilih file `docs/API_Sistem_Peminjaman_Buku_Perpustakaan.postman_collection.json`
-4. Klik **Import**
-5. Setup environment variable `base_url` = `http://localhost:8000/api`
-6. Login terlebih dahulu, token akan tersimpan otomatis
+Dokumentasi mencakup detail endpoint, method, parameter, contoh request, dan contoh response untuk seluruh fitur sistem.
 
 ---
 
@@ -198,29 +192,6 @@ Dokumentasi lengkap tersedia dalam bentuk **Postman Collection** yang dapat diim
 | Giyasul (Ketua) | - | Arsitektur sistem, endpoint Auth, Books, Categories, JWT middleware |
 | Idir | 2301040011 | Endpoint Members, Loans, Log Aktivitas, validasi & error handling |
 | Tio | 2301040022 | Dokumentasi Postman Collection, README, setup GitHub, testing |
-
----
-
-## 📁 Struktur Repositori
-
-```
-api_sistem_peminjaman_buku_perpustakaan/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   └── Middleware/
-│   └── Models/
-├── database/
-│   ├── migrations/
-│   └── seeders/
-├── routes/
-│   └── api.php
-├── docs/
-│   └── API_Sistem_Peminjaman_Buku_Perpustakaan.postman_collection.json
-├── .env.example
-├── README.md
-└── composer.json
-```
 
 ---
 
