@@ -1,8 +1,9 @@
 <?php
+
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Member;
+use Illuminate\Database\Seeder;
 
 class MemberSeeder extends Seeder
 {
@@ -10,46 +11,46 @@ class MemberSeeder extends Seeder
     {
         $members = [
             [
-                'name'    => 'tio ssantoso',
-                'email'   => 'budi@gmail.com',
-                'phone'   => '081234567890',
+                'name' => 'tio ssantoso',
+                'email' => 'Tio@gmail.com',
+                'phone' => '081234567890',
                 'address' => 'Jl. Mawar No. 10, Mataram',
-                'status'  => 'active',
+                'status' => 'active',
             ],
             [
-                'name'    => 'anshor seblak',
-                'email'   => 'sari@gmail.com',
-                'phone'   => '082345678901',
+                'name' => 'anshor seblak',
+                'email' => 'Anshor@gmail.com',
+                'phone' => '082345678901',
                 'address' => 'Jl. Melati No. 5, Mataram',
-                'status'  => 'active',
+                'status' => 'active',
             ],
             [
-                'name'    => 'giyasul mantap',
-                'email'   => 'ahmad@gmail.com',
-                'phone'   => '083456789012',
+                'name' => 'giyasul mantap',
+                'email' => 'Giyasul@gmail.com',
+                'phone' => '083456789012',
                 'address' => 'Jl. Kenanga No. 3, Lombok',
-                'status'  => 'active',
+                'status' => 'active',
             ],
             [
-                'name'    => 'haidir bali',
-                'email'   => 'rina@gmail.com',
-                'phone'   => '084567890123',
+                'name' => 'haidir bali',
+                'email' => 'Haidir@gmail.com',
+                'phone' => '084567890123',
                 'address' => 'Jl. Dahlia No. 8, Mataram',
-                'status'  => 'active',
+                'status' => 'active',
             ],
             [
-                'name'    => 'abin jempong',
-                'email'   => 'doni@gmail.com',
-                'phone'   => '085678901234',
+                'name' => 'abin jempong',
+                'email' => 'Abin@gmail.com',
+                'phone' => '085678901234',
                 'address' => 'Jl. Anggrek No. 12, Lombok',
-                'status'  => 'inactive',
+                'status' => 'inactive',
             ],
-             [
-                'name'    => 'kiki batu lingsar',
-                'email'   => 'doni@gmail.com',
-                'phone'   => '085678901234',
+            [
+                'name' => 'kiki batu lingsar',
+                'email' => 'Kiki@gmail.com',
+                'phone' => '085678901234',
                 'address' => 'Jl. Anggrek No. 12, Lombok',
-                'status'  => 'inactive',
+                'status' => 'inactive',
             ],
         ];
 
