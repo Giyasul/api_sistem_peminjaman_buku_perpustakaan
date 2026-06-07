@@ -88,8 +88,8 @@ Setelah menjalankan seeder, akun berikut sudah tersedia dan siap digunakan:
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@library.com | password123 |
-| Petugas | petugas1@library.com | password123 |
+| Admin | admin@example.com | password123 |
+| tes | tes@example.com | password123 |
 
 > **Cara login:** Kirim request `POST /api/login` dengan email dan password di atas, lalu gunakan token yang didapat sebagai `Bearer Token` di header Authorization untuk mengakses endpoint lainnya.
 
