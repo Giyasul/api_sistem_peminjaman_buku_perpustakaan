@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\LogAktivitasController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -28,5 +29,6 @@ Route::middleware(['auth:api', 'log.activity'])->group(function () {
     Route::apiResource('member', MemberController::class);
     // loan
     Route::apiResource('loan', LoanController::class);
-
+    // log aktivitas
+    Route::get('/log', [LogAktivitasController::class, 'index']);
 });
