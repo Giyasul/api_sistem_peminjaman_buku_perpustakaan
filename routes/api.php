@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\BookController;
 
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
@@ -16,4 +18,8 @@ Route::middleware(['auth:api', 'log.activity'])->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     // User
     Route::apiResource('users', UserController::class)->except(['store']);
+    // kategori buku 
+    Route::apiResource('categories', KategoriController::class);
+    // buku
+    Route::apiResource('books', BookController::class);
 });
