@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'log.activity' => LogAktivitas::class,
         ]);
+        $middleware->redirectGuestsTo(fn () => response()->json([
+            'success' => false,
+            'message' => 'Unauthorized Token tidak valid atau tidak ada',
+        ], 401));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

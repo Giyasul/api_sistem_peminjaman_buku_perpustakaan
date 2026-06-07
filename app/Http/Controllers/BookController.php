@@ -89,4 +89,19 @@ class BookController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Buku dihapus']);
     }
+
+    public function dipinjam()
+    {
+        $books = Book::with('category')
+            ->whereHas('loans', function ($query) {
+                $query->where('status', 'borrowed');
+            })
+            ->get();
+
+        return response()->json([
+            'success' => true,
+            'total' => $books->count(),
+            'data' => $books,
+        ]);
+    }
 }

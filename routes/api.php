@@ -23,12 +23,17 @@ Route::middleware(['auth:api', 'log.activity'])->group(function () {
     Route::apiResource('user', UserController::class)->except(['store']);
     // kategori buku
     Route::apiResource('categories', KategoriController::class);
+    Route::get('/categories/{id}/books', [KategoriController::class, 'books']);
     // buku
     Route::apiResource('book', BookController::class);
+    Route::get('/books/dipinjam', [BookController::class, 'dipinjam']);
     // member
     Route::apiResource('member', MemberController::class);
+    Route::get('/members/{id}/pinjaman', [MemberController::class, 'pinjaman']);
     // loan
     Route::apiResource('loan', LoanController::class);
+    Route::get('/pinjaman/overdue', [LoanController::class, 'overdue']);
+    Route::get('/pinjaman/aktif', [LoanController::class, 'aktif']);
     // log aktivitas
     Route::get('/log', [LogAktivitasController::class, 'index']);
 });
