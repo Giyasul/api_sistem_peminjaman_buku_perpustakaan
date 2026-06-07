@@ -177,7 +177,7 @@ Dokumentasi mencakup detail endpoint, method, parameter, contoh request, dan con
 
 | Teknologi | Keterangan |
 |-----------|------------|
-| Laravel 11 | Framework PHP untuk membangun RESTful API |
+| Laravel 13 | Framework PHP untuk membangun RESTful API |
 | MySQL | Database untuk menyimpan data sistem |
 | JWT Auth | Autentikasi berbasis JSON Web Token (tymon/jwt-auth) |
 | Postman | Tools untuk testing dan dokumentasi API |
