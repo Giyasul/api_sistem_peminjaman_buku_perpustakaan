@@ -1,6 +1,6 @@
 # 📚 API Sistem Peminjaman Buku Perpustakaan
 
-> RESTful API untuk pengelolaan sistem perpustakaan digital — mencakup manajemen buku, kategori, anggota, dan transaksi peminjaman buku.
+> RESTful API untuk pengelolaan sistem perpustakaan digital mencakup manajemen buku, kategori, anggota, dan transaksi peminjaman buku.
 
 ---
 
